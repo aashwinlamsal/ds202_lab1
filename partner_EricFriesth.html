@@ -373,6 +373,49 @@ summary {
 <p>Aashwin and I switched roles for this lab, so the most recent commit is him deleting old files from the repo. ID: 5ff0d71655a3ff461847613bc25fe55d685022b7</p>
 <p>I was able to knit Aashwin’s Rmd file.</p>
 <p>Something that Aashwin and I found to make git and github easier was look up cheat sheets and free online learning tools to help us out.</p>
+<div id="concepts" class="section level1">
+<h1>Concepts</h1>
+<ol style="list-style-type: decimal">
+<li><p>Github is a central, online service for easily storing and sharing files and Git is the connecting piece between Github and your other applications that you wish to link to anyone’s public (or private with proper authorization from the owner) repository.</p></li>
+<li><p>They can be used independently from one another but you would be missing out on 99% of the functionality of both, with them being so useful when they’re interconnected.</p></li>
+<li><p>A repository is the location that you would be pulling and pushing files to and from. You can create a repository (repo) using ‘git init’ and add files to it using ‘git add’ or ‘git remote add’. You can also “clone” or “copy” another repo using ‘git clone <url>’.</p></li>
+</ol>
+</div>
+<div id="coding-exercises" class="section level1">
+<h1>Coding Exercises</h1>
+<pre><code>## [1] 4</code></pre>
+<pre><code>##   age smoker weight
+## 1  25      T    120
+## 2  30      F    137
+## 3  45      T    150
+## 4  60      F    168
+## 5  12      F     91
+## 6  41      F    142</code></pre>
+<pre class="r"><code>averageOfNA = function(){
+  avg = mean(is.na(X)) #avg is the average number of &#39;NA&#39;s in vector &#39;X&#39;
+  return(avg)
+}
+averageOfNA()</code></pre>
+<pre class="r"><code>averageOfElse = function(){
+  avgElse = X / sum(X, na.rm = TRUE) #avgElse is the average of the other values in the vector &#39;X&#39; that are not &#39;NA&#39;
+  return(avgElse)
+}
+averageOfElse()</code></pre>
+<pre class="r"><code>both_na = function(x,y){
+  if(length(x) != length(y)){
+    print(&quot;Your vectors are not the same length, try again.&quot;)
+  }else{
+    sum(is.na(x)) + sum(is.na(y))
+  }
+  
+}
+
+x = c(1,2,NA,4,5)
+y = c(NA,2,3,NA,NA)
+both_na(x,y)
+
+# In this code segement, my partner Aashwin and I created an &#39;if&#39; function that first checks to see if the two provided vectors are the same length, then adds their number of &#39;NA&#39; values together</code></pre>
+</div>
 
 
 
