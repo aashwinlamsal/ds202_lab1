@@ -87,7 +87,7 @@ both_na <- function(x,y){
    else{
       sum(is.na(x)) + sum(is.na(y))
      
-   }
+   } #both_na calculates the total number of NA's in two vectors of the same length, if they're not the same length the function will not run.
 }
   
   x = c(1,3, NA, 45, 1923, NA)
