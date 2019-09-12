@@ -370,6 +370,73 @@ summary {
 
 
 <p>My name is Aashwin Lamsal. Usually I tell people that I’m an MIS major trying to specialize in BA, with my interests mainly lying in machine learning. Three strategies I use to organize myself all involve my iPhone in some way. I usually set multiple alarms througout the day to remind myself to do routine things (work out, going to bed, waking up, etc.), I use reminders to plan dates, in a similar way to a regular planner. Thirdly, I use my phone to check and send emails everyday, which is imperative to the way I organize my work/life. An interesting fact about myself is that I have been to the birthplace of the Buddha, in Lumbini, Nepal.</p>
+<p>#Concept Questions# 1)Git is a revision control system primarily used to preserve the history of one’s code, while GitHub is a hosting service for Git repositories, where versions of one’s code gets saved to.</p>
+<p>2)Technically yes you could use Git and GitHub independently, especially if you need to find a public library or something from someone else’s repository via GitHub. However, using Git independently from GitHub doesn’t really benefit you, mainly because you end up missing the point of using Git in the first place. GitHub inhibits Git by allowing collaboration, reinstatements of past versions of code (in case mistakes were made), and by letting you search anyone’s public profile to find whatever you could want from them.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Git can be initialized on a project, which then creates the Git repository. The repository tracks all the changes made to one’s files/code, building up a history over time where you could go back and reinstate a previous version if need be. To make a repository, one types the following:</li>
+</ol>
+<p>git init git add READ.ME git commit -m “First commit” git remote add origin <a href="mailto:git@github.com" class="email">git@github.com</a>:username/<reponame>.git git push -u origin master</p>
+<p>#Coding Questions#</p>
+<ol style="list-style-type: decimal">
+<li><ol style="list-style-type: decimal">
+<li>Write code to count the total number of <code>NA</code> occurrences in the vector <code>X = c(47,34,33,65,37,NA,43,NA,11,NA,23,NA)</code>.</li>
+</ol></li>
+</ol>
+<pre><code>##  [1] 47 34 33 65 37 NA 43 NA 11 NA 23 NA</code></pre>
+<pre><code>## [1] 4</code></pre>
+<p>2)Run the following code:</p>
+<pre class="r"><code>   age = c(25,30,45,60,12,41)
+   smoker = c(&#39;T&#39;,&#39;F&#39;,&#39;T&#39;,&#39;F&#39;,&#39;F&#39;,&#39;F&#39;)
+   weight = c(120,137,0,168,91,142)
+   example_data = data.frame(age,smoker,weight)
+   
+   #code to correct the error
+   example_data[example_data == 0] &lt;- 150
+   print(example_data)</code></pre>
+<pre><code>##   age smoker weight
+## 1  25      T    120
+## 2  30      F    137
+## 3  45      T    150
+## 4  60      F    168
+## 5  12      F     91
+## 6  41      F    142</code></pre>
+<pre class="r"><code>   #example data now contains the weight of 150 where 0 used to occupy</code></pre>
+<p>This code took three vectors (<code>age</code>, <code>smoker</code>, and <code>weight</code>) and binded them together into an <code>R</code> object known as a <code>data.frame</code>. The advantage of <code>data.frame</code> is that it can handle vectors of different types. For example, age is a numeric vector but smoker status is a character vector (T or F). We named this <code>data.frame</code> as <code>example_data</code>. I obviously made a data entry error: someone cannot have 0 weight. The correct weight should be 150 pounds. Write one line of code that can easily correct this using the <code>[]</code> syntax.</p>
+<ol start="3" style="list-style-type: decimal">
+<li><ol start="3" style="list-style-type: decimal">
+<li>In the following I have two code snippets. Turn these code snippets into functions. Think about what each function does and what you would name it. How many arguments does it need?</li>
+</ol></li>
+</ol>
+<pre class="r"><code> avgOfNA &lt;- function(a){
+    avg = mean(is.na(a)) #this function finds the average number of NA values within a dataframe.
+    return(avg)
+   
+ }
+avg(x)</code></pre>
+<pre class="r"><code>avgOfElse &lt;- function(a){
+  avg2 = a / sum(a, na.rm = TRUE) #this function finds the average for each of the other values that are NOT labeled NA
+  return(avg2)
+  
+}  
+avg2(x)</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Write a function named <code>both_na()</code>. This function take two vectors of the same length and returns the number of positions that have an <code>NA</code> value in both vectors.</li>
+</ol>
+<pre class="r"><code>both_na &lt;- function(x,y){
+   if(length(x)!=length(y)){
+     print(&quot;Vector length not equal, please fix before trying again&quot;)
+     
+   }
+   else{
+      sum(is.na(x)) + sum(is.na(y))
+     
+   } #both_na calculates the total number of NA&#39;s in two vectors of the same length, if they&#39;re not the same length the function will not run.
+}
+  
+  x = c(1,3, NA, 45, 1923, NA)
+  y = c(1,NA, 3, 45, 124)
+  
+  both_na(x,y)</code></pre>
 
 
 
