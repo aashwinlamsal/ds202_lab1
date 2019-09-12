@@ -27,9 +27,8 @@ git push -u origin master
 
 ```{r, echo=FALSE}
 x = c(47,34,33,65,37,NA,43,NA,11,NA,23,NA) 
+print(x)
 sum(is.na(x)) #is.na function is used to determine whether or not a value is NA, and returns a boolean result, so we use the sum function to count the number of TRUE's that the is.na function shows, and the result should be 4.
-
-
 
 ```
 
@@ -55,7 +54,7 @@ sum(is.na(x)) #is.na function is used to determine whether or not a value is NA,
     
 3)  3. In the following I have two code snippets. Turn these code snippets into functions. Think about what each function does
   and what you would name it. How many arguments does it need? 
-```{r Average, eval=FALSE, echo=FALSE} 
+```{r Average, eval=FALSE} 
  avgOfNA <- function(a){
     avg = mean(is.na(a)) #this function finds the average number of NA values within a dataframe.
     return(avg)
@@ -64,7 +63,7 @@ sum(is.na(x)) #is.na function is used to determine whether or not a value is NA,
 avg(x)
  
 ```
-```{r Average2, eval=FALSE, echo=FALSE }
+```{r Average2, eval=FALSE}
 avgOfElse <- function(a){
   avg2 = a / sum(a, na.rm = TRUE) #this function finds the average for each of the other values that are NOT labeled NA
   return(avg2)
@@ -78,7 +77,7 @@ avg2(x)
 
 
 4) Write a function named `both_na()`. This function take two vectors of the same length and returns the number of positions that have an `NA` value in both vectors.
-```{r both, eval=FALSE, echo=FALSE }
+```{r both, eval=FALSE}
 both_na <- function(x,y){
    if(length(x)!=length(y)){
      print("Vector length not equal, please fix before trying again")
