@@ -77,6 +77,7 @@ x = c(1,2,NA,4,5)
 y = c(NA,2,3,NA,NA)
 both_na(x,y)
 
+# In this code segement, my partner Aashwin and I created an 'if' function that first checks to see if the two provided vectors are the same length, then adds their number of 'NA' values together
 ```
 
 
