@@ -6,3 +6,93 @@ output: html_document
 ---
 
 My name is Aashwin Lamsal. Usually I tell people that I'm an MIS major trying to specialize in BA, with my interests mainly lying in machine learning. Three strategies I use to organize myself all involve my iPhone in some way. I usually set multiple alarms througout the day to remind myself to do routine things (work out, going to bed, waking up, etc.), I use reminders to plan dates, in a similar way to a regular planner. Thirdly, I use my phone to check and send emails everyday, which is imperative to the way I organize my work/life. An interesting fact about myself is that I have been to the birthplace of the Buddha, in Lumbini, Nepal.
+
+#Concept Questions#
+1)Git is a revision control system primarily used to preserve the history of one's code, while GitHub is a hosting service for Git repositories, where versions of one's code gets saved to. 
+
+2)Technically yes you could use Git and GitHub independently, especially if you need to find a public library or something from someone else's repository via GitHub. However, using Git independently from GitHub doesn't really benefit you, mainly because you end up missing the point of using Git in the first place. GitHub inhibits Git by allowing collaboration, reinstatements of past versions of code (in case mistakes were made), and by letting you search anyone's public profile to find whatever you could want from them.
+
+3) Git can be initialized on a project, which then creates the Git repository. The repository tracks all the changes made to one's files/code, building up a history over time where you could go back and reinstate a previous version if need be. To make a repository, one types the following:
+
+git init
+git add READ.ME
+git commit -m "First commit"
+git remote add origin git@github.com:username/<reponame>.git
+git push -u origin master
+
+
+#Coding Questions#
+
+1) 1. Write code to count the total number of `NA` occurrences in the vector `X = c(47,34,33,65,37,NA,43,NA,11,NA,23,NA)`.
+
+```{r, echo=FALSE}
+x = c(47,34,33,65,37,NA,43,NA,11,NA,23,NA) 
+sum(is.na(x)) #is.na function is used to determine whether or not a value is NA, and returns a boolean result, so we use the sum function to count the number of TRUE's that the is.na function shows, and the result should be 4.
+
+
+
+```
+
+2)Run the following code: 
+
+```{r, }
+   age = c(25,30,45,60,12,41)
+   smoker = c('T','F','T','F','F','F')
+   weight = c(120,137,0,168,91,142)
+   example_data = data.frame(age,smoker,weight)
+   
+   #code to correct the error
+   example_data[example_data == 0] <- 150
+   print(example_data)
+   #example data now contains the weight of 150 where 0 used to occupy
+```
+   
+  This code took three vectors (`age`, `smoker`, and `weight`) and binded them together into an `R` object known as a 
+  `data.frame`. The advantage of `data.frame` is that it can handle vectors of different types. For example, age is a numeric 
+    vector but smoker status is a character vector (T or F). We named this `data.frame` as `example_data`. I obviously made a
+    data entry error: someone cannot have 0 weight. The correct weight should be 150 pounds. Write one line of code that can
+    easily correct this using the `[]` syntax.
+    
+3)  3. In the following I have two code snippets. Turn these code snippets into functions. Think about what each function does
+  and what you would name it. How many arguments does it need? 
+```{r Average, eval=FALSE, echo=FALSE} 
+ avgOfNA <- function(a){
+    avg = mean(is.na(a)) #this function finds the average number of NA values within a dataframe.
+    return(avg)
+   
+ }
+avg(x)
+ 
+```
+```{r Average2, eval=FALSE, echo=FALSE }
+avgOfElse <- function(a){
+  avg2 = a / sum(a, na.rm = TRUE) #this function finds the average for each of the other values that are NOT labeled NA
+  return(avg2)
+  
+}  
+avg2(x)
+```
+
+
+
+
+
+4) Write a function named `both_na()`. This function take two vectors of the same length and returns the number of positions that have an `NA` value in both vectors.
+```{r Average2, eval=FALSE, echo=FALSE }
+both_na <- function(x,y){
+   if(length(x)!=length(y)){
+     print("Vector length not equal, please fix before trying again")
+     
+   }
+   else{
+      sum(is.na(x)) + sum(is.na(y))
+     
+   }
+}
+  
+  x = c(1,3, NA, 45, 1923, NA)
+  y = c(1,NA, 3, 45, 124)
+  
+  both_na(x,y)
+```
+
