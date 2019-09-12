@@ -78,7 +78,7 @@ avg2(x)
 
 
 4) Write a function named `both_na()`. This function take two vectors of the same length and returns the number of positions that have an `NA` value in both vectors.
-```{r Average2, eval=FALSE, echo=FALSE }
+```{r both, eval=FALSE, echo=FALSE }
 both_na <- function(x,y){
    if(length(x)!=length(y)){
      print("Vector length not equal, please fix before trying again")
